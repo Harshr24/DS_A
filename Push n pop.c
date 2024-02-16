@@ -1,5 +1,6 @@
 #include<stdio.h>
 #define n 10
+
 int stack[n];
 int choice, a, i , top =-1;
 
