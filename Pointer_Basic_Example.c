@@ -29,19 +29,6 @@ void findMinMax(int arr[], int size, int* max, int* min) {
     }
 }
 
-// Function to check if a string is a palindrome using pointers
-int isPalindrome(const char* str) {
-    const char* start = str;
-    const char* end = str + strlen(str) - 1;
-    while (start < end) {
-        if (*start != *end)
-            return 0; // Not a palindrome
-        start++;
-        end--;
-    }
-    return 1; // Palindrome
-}
-
 // Function to display the menu and get the user's choice
 int displayMenu() {
     int choice;
@@ -50,8 +37,7 @@ int displayMenu() {
     printf("1. Swap two numbers using pointers\n");
     printf("2. Reverse an array using pointers\n");
     printf("3. Find maximum and minimum element in an array using pointers\n");
-    printf("4. Check palindrome using pointers\n");
-    printf("5. Exit the program\n");
+    printf("4. Exit the program\n");
     printf("Enter your choice: ");
     scanf("%d", &choice);
     return choice;
@@ -105,18 +91,6 @@ int main() {
                 break;
             }
             case 4: {
-                char str[100];
-                printf("Enter a string: ");
-                scanf("%s", str);
-
-                // Check if the string is a palindrome
-                if (isPalindrome(str))
-                    printf("'%s' is a palindrome.\n", str);
-                else
-                    printf("'%s' is not a palindrome.\n", str);
-                break;
-            }
-            case 5: {
                 printf("Thank you for using the pointer program. Goodbye!\n");
                 break;
             }
