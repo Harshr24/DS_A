@@ -19,6 +19,14 @@ public class Insertion_in_array {
       System.out.println("Invalid index. Index should be between 0 and " + s);
     }
     
+    /* Create a new array and then insert it  
+    
+    int[] newarr = new int[s+1];      
+    for (int i = s - 1; i >= index; i--) {
+      a[i + 1] = a[i]; 
+    }
+    */
+
     // Shift elements to the right of the insertion index one position to the right
     for (int i = s - 1; i >= index; i--) {
       a[i + 1] = a[i]; // Shift elements to the right starting from the last element
