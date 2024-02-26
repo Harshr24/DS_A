@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <ctype.h>
 
+int stringLength(); // save our code from explicit errors
 // Function to check if a string is a palindrome using pointers
 int isPalindrome(const char* str) {
     const char* start = str; // Pointer to the first character of the string
