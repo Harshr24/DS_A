@@ -6,7 +6,7 @@ class Data {
     float floatValue;
 }
 
-public class UnionArrayExample {
+public class Union_in_java {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
@@ -37,6 +37,7 @@ public class UnionArrayExample {
                 System.out.println("Invalid choice. Enter 1 for integer or 2 for float.");
                 --i; // Decrement i to re-enter the current index
             }
+            scanner.close();
         }
 
         // Display the values stored in the array
