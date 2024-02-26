@@ -1,11 +1,17 @@
 #include <stdio.h>
+#include <ctype.h>
 
 // Function to check if a string is a palindrome using pointers
 int isPalindrome(const char* str) {
     const char* start = str; // Pointer to the first character of the string
-    const char* end = str + strlen(str) - 1; // Pointer to the last character of the string
+    const char* end = str + stringLength(str) - 1; // Pointer to the last character of the string
     while (start < end) { // Loop until the pointers cross
-        if (*start != *end) // Compare the characters pointed by the pointers
+        // Ignore spaces, punctuation, and capitalization
+        while (*start == ' ' || !isalnum(*start))
+            start++;
+        while (*end == ' ' || !isalnum(*end))
+            end--;
+        if (tolower(*start) != tolower(*end)) // Compare the characters pointed by the pointers
             return 0; // Not a palindrome
         start++; // Move the start pointer to the right
         end--; // Move the end pointer to the left
@@ -27,7 +33,7 @@ int stringLength(const char* str) {
 // Function to display the menu and get the user's choice
 int displayMenu() {
     int choice;
-    printf("Welcome to the pointer program!\n");
+    printf("\nWelcome to the pointer program!\n");
     printf("Please choose one of the following options:\n");
     printf("1. Check palindrome using pointers\n");
     printf("2. Implement string length function using pointers\n");
