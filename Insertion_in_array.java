@@ -17,7 +17,6 @@ public class Insertion_in_array {
     
     if (index < 0 || index > s) {    
       System.out.println("Invalid index. Index should be between 0 and " + s);
-      return;
     }
     
     // Shift elements to the right of the insertion index one position to the right
@@ -32,5 +31,6 @@ public class Insertion_in_array {
     for (int num : a) {
       System.out.print(num + " ");
     }
+    sc.close();
   }
 }
