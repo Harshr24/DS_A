@@ -6,7 +6,7 @@ class Student {
     float marks;
 }
 
-public class StudentDatabaseApp {
+public class Struct_pointer_array {
     public static void addStudent(Student[] database, int numStudents) {
         if (numStudents < database.length) {
             Scanner scanner = new Scanner(System.in);
@@ -23,6 +23,7 @@ public class StudentDatabaseApp {
             database[numStudents].marks = scanner.nextFloat();
 
             System.out.println("Student added successfully!");
+            scanner.close();
         } else {
             System.out.println("Database is full. Cannot add more students.");
         }
@@ -96,5 +97,6 @@ public class StudentDatabaseApp {
                     System.out.println("Invalid choice. Please enter a valid option.");
             }
         } while (choice != 4);
+        scanner.close();
     }
 }
