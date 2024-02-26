@@ -1,7 +1,7 @@
 import java.util.Scanner;
 import java.util.Stack;
 
-public class StackExample {
+public class Stack_in_Java {
     private static final int MAX = 10;
     private Stack<Integer> stack = new Stack<>();
     
@@ -35,7 +35,7 @@ public class StackExample {
     
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        StackExample stackExample = new StackExample();
+       Stack_in_Java stackExample = new Stack_in_Java();
         int choice, value;
         
         while (true) {
@@ -65,6 +65,6 @@ public class StackExample {
                 default:
                     System.out.println("Invalid choice!");
             }
-        }
-    }
+        }
+    }
 }
