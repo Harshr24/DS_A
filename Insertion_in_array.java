@@ -19,13 +19,21 @@ public class Insertion_in_array {
       System.out.println("Invalid index. Index should be between 0 and " + s);
     }
     
-    /* Create a new array and then insert it  
-    
-    int[] newarr = new int[s+1];      
-    for (int i = s - 1; i >= index; i--) {
-      a[i + 1] = a[i]; 
-    }
-    */
+/* Create a new array and then insert it  
+      int[] newArray = new int[size + 1];   // Create a new array with increased size
+      for (int i = 0, j = 0; i < newArray.length; i++)      // Copy elements from the original array to the new array
+      {
+        if (i == index) {
+            newArray[i] = value; // Insert the new value at the specified index
+        } else {
+          newArray[i] = array[j++]; // Copy elements from the original array
+        }
+      }
+      System.out.println("Array after insertion:");
+      for (int num : newArray) {
+        System.out.print(num + " ");
+      }
+*/
 
     // Shift elements to the right of the insertion index one position to the right
     for (int i = s - 1; i >= index; i--) {
