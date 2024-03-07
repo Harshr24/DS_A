@@ -106,7 +106,7 @@ int main() {
         insert(value);
     }
     display(); // Display the linked list
-    int choice;
+    int choice, position;
     printf("Enter 1 to delete the first node, 2 to delete the middle node, 3 to delete the last node: ");
     scanf("%d", &choice);
     switch (choice) {
@@ -114,7 +114,6 @@ int main() {
             deleteFirstNode();
             break;
         case 2:
-            int position;
             printf("Enter position of the node to delete: ");
             scanf("%d", &position);
             deleteMiddleNode(position);
