@@ -59,6 +59,28 @@ class LinkedList {
         System.out.println("\nData deleted = " + toDelete.data);
         System.out.println("SUCCESSFULLY DELETED FIRST NODE FROM LIST");
     }
+
+    public void deleteLastNode() {
+        if (head == null) {
+            System.out.println("List is already empty.");
+            return;
+        }
+        Node toDelete = head;                       // Initialize two pointers: toDelete and secondLastNode
+        Node secondLastNode = null;
+
+        while (toDelete.next != null) {             // Iterate through the list until we reach the last node
+            secondLastNode = toDelete;              // Update secondLastNode to point to the current node
+
+            toDelete = toDelete.next;               // Move toDelete to the next node in the list
+        }
+
+        if (toDelete == head) {
+            head = null;                            // if the last node is the head node, set head node to null
+        } else {
+            secondLastNode.next = null;
+        }
+        System.out.println("Last node deleted successfully.");
+    }
 }
 
 public class Single_Linked_List_Deletion {
