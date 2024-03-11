@@ -69,37 +69,37 @@ class LinkedList {
 public class Single_Linked_List_Insertion {
     public static void main(String[] args) {
         LinkedList linkedList = new LinkedList();
-        Scanner scanner = new Scanner(System.in);
+        Scanner sc = new Scanner(System.in);
         System.out.print("Enter number of elements in the linked list: ");
-        int n = scanner.nextInt();
+        int n = sc.nextInt();
         System.out.println("Enter elements to insert into the linked list:");
         for (int i = 0; i < n; i++) {
-            int data = scanner.nextInt();
+            int data = sc.nextInt();
             linkedList.insertFromTail(data);
         }
         linkedList.displayList();
         while (true) {
             System.out.println("\n1. Insert from head\n2. Insert from tail\n3. Insert at position\n4. Exit");
             System.out.print("Enter your choice: ");
-            int choice = scanner.nextInt();
+            int choice = sc.nextInt();
             switch (choice) {
                 case 1:
                     System.out.print("Enter data to insert at the head: ");
-                    int data = scanner.nextInt();
+                    int data = sc.nextInt();
                     linkedList.insertFromHead(data);
                     linkedList.displayList();
                     break;
                 case 2:
                     System.out.print("Enter data to insert at the tail: ");
-                    data = scanner.nextInt();
+                    data = sc.nextInt();
                     linkedList.insertFromTail(data);
                     linkedList.displayList();
                     break;
                 case 3:
                     System.out.print("Enter data to insert at a position: ");
-                    data = scanner.nextInt();
+                    data = sc.nextInt();
                     System.out.print("Enter position: ");
-                    int position = scanner.nextInt();
+                    int position = sc.nextInt();
                     linkedList.insertAtPosition(data, position);
                     linkedList.displayList();
                     break;
@@ -108,8 +108,7 @@ public class Single_Linked_List_Insertion {
                 default:
                     System.out.println("Invalid choice!");
                     break;
-            }
+            } sc.close();
         }
     }
 }
-
