@@ -1,4 +1,4 @@
-import java.util.Scanner;
+import java.util.*;
 
 class Node {
     int data;
@@ -48,3 +48,23 @@ class LinkedList {
         System.out.println("\nData deleted = " + toDelete.data);
         System.out.println("SUCCESSFULLY DELETED FIRST NODE FROM LIST");
     }
+}
+public class Single_Linked_List_Deletion {
+    public static void main (String[] args) {
+
+        Scanner sc = new Scanner(System.in);
+        LinkedList linkedList = new LinkedList();
+        System.out.print("Enter number of elements in the linked list: ");
+        int n = sc.nextInt();
+        System.out.println("Enter elements to insert into the linked list:");
+        for (int i = 0; i < n; i++) {
+            int value = sc.nextInt();
+            linkedList.insert(value);
+        }
+        linkedList.display();
+        
+        linkedList.deleteFirstNode();
+        linkedList.display();
+        sc.close();
+    }
+}
