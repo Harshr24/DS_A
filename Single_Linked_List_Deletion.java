@@ -9,8 +9,6 @@ class Node {
         this.next = null;
     }
 }
-
-
 class LinkedList {
     Node head;
 
@@ -80,6 +78,29 @@ class LinkedList {
             secondLastNode.next = null;
         }
         System.out.println("Last node deleted successfully.");
+    }
+    
+    void deleteMiddleNode(int position) {
+            int i;
+            if (head == null) {
+                System.out.println("List is already empty.");
+                return;
+            }
+            Node toDelete = head;
+            Node prevNode = head;
+            for (i = 2; i <= position; i++) {
+                prevNode = toDelete;                // move the previous pointer one step behind
+                toDelete = toDelete.next;           // move the toDelete pointer one step ahead
+                if (toDelete == null) break;
+            }
+            if (toDelete != null) {
+                if (toDelete == head) head = head.next;     // if the node to delete is the head node
+                prevNode.next = toDelete.next;              // update the next pointer of the previous node to skip the node to delete
+                toDelete.next = null;                       // set the next pointer of the node to delete to null
+                System.out.println("SUCCESSFULLY DELETED NODE FROM MIDDLE OF LIST");
+            } else {
+                System.out.println("Invalid position unable to delete.");
+            }
     }
 }
 
