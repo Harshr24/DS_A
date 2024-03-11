@@ -106,22 +106,34 @@ class LinkedList {
 
 public class Single_Linked_List_Deletion {
     public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
+        Scanner scanner = new Scanner(System.in);
         LinkedList linkedList = new LinkedList();
-
         System.out.print("Enter number of elements in the linked list: ");
-        int n = sc.nextInt();
-
+        int n = scanner.nextInt();
         System.out.println("Enter elements to insert into the linked list:");
         for (int i = 0; i < n; i++) {
-            int value = sc.nextInt();
+            int value = scanner.nextInt();
             linkedList.insert(value);
         }
-
         linkedList.display();
-        linkedList.deleteFirstNode();
+        System.out.print("Enter 1 to delete the first node, 2 to delete the middle node, 3 to delete the last node: ");
+        int choice = scanner.nextInt();
+        switch (choice) {
+            case 1:
+                linkedList.deleteFirstNode();
+                break;
+            case 2:
+                System.out.print("Enter position of the node to delete: ");
+                int position = scanner.nextInt();
+                linkedList.deleteMiddleNode(position);
+                break;
+            case 3:
+                linkedList.deleteLastNode();
+                break;
+            default:
+                System.out.println("Invalid choice.");
+                break;
+        }
         linkedList.display();
-
-        sc.close();
     }
 }
