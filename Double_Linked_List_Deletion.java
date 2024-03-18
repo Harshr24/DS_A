@@ -17,15 +17,6 @@ class DoublyLinkedList {
         return newNode;
     }
 
-    void insertFromHead(int data) {
-        Node newNode = createNode(data);
-        newNode.next = head;
-        if (head != null) {
-            head.prev = newNode;
-        }
-        head = newNode;
-    }
-
     void insertFromTail(int data) {
         Node newNode = createNode(data);
         if (head == null) {
@@ -39,31 +30,7 @@ class DoublyLinkedList {
             newNode.prev = current;
         }
     }
-
-    void insertAtPosition(int data, int position) {
-        if (position < 0) {
-            System.out.println("Invalid position!");
-            return;
-        }
-        if (position == 0) {
-            insertFromHead(data);
-            return;
-        }
-        Node newNode = createNode(data);
-        Node current = head;
-        for (int i = 1; i < position && current != null; i++) {
-            current = current.next;
-        }
-        if (current == null || current.next == null) {
-            System.out.println("Position out of range!");
-            return;
-        }
-        newNode.next = current.next;
-        newNode.prev = current;
-        current.next.prev = newNode;
-        current.next = newNode;
-    }
-
+    
     void deleteFromHead() {
         if (head == null) {
             System.out.println("List is empty!");
